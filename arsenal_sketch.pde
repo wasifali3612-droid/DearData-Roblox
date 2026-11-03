@@ -1,4 +1,3 @@
- // Variables
 String titleText = "SESSION 1: OCTOBER 22ND";
 String startTimeText = "16:15"; 
 float duration = 60;
@@ -31,7 +30,7 @@ void draw() {
     text("Image not found", 50, 80);
   }
   
-  // 3. START TIME (Clock Shape)
+  // 3. START TIME
   fill(255);
   textSize(16);
   textAlign(LEFT, TOP);
@@ -42,38 +41,31 @@ void draw() {
   stroke(255);
   ellipse(100, 330, 100, 100); 
   
-  // --- CLOCK MATH FIX ---
-  // In Processing, 0 is at 3 o'clock.
-  // Minute hand (15 mins): Points exactly at 3 o'clock. Angle = 0.
+  
   float minuteAngle = 0; 
   
-  // Hour hand (4 o'clock): Points at 4. 
-  // 3 o'clock is 0. 6 o'clock is 90 degrees.
-  // 4 o'clock is 1/3 of the way between 3 and 6, so it's 30 degrees past 3.
-  // 30 degrees = PI/6 radians.
   float hourAngle = PI/6; 
   
-  // Draw Minute Hand (Length 40, pointing right)
+  // Draw Minute Hand
   stroke(0);
   strokeWeight(4);
   float mx = 100 + 40 * cos(minuteAngle);
   float my = 330 + 40 * sin(minuteAngle);
   line(100, 330, mx, my); 
   
-  // Draw Hour Hand (Length 25, pointing down-right towards 4)
+  // Draw Hour Hand 
   strokeWeight(6);
   float hx = 100 + 25 * cos(hourAngle);
   float hy = 330 + 25 * sin(hourAngle);
   line(100, 330, hx, hy);
   
-  // Reset for text
   stroke(255);
   strokeWeight(2);
   fill(255);
   text(startTimeText, 85, 390);
   
   
-  // 4. DURATION (Basic Bar Chart)
+  // 4. DURATION
   fill(255);
   text("Duration (60 mins):", 220, 250);
   
@@ -82,7 +74,7 @@ void draw() {
   rect(220, 280, durationBarWidth, 30);
   
   
-  // 5. SATISFACTION (Happy Emoji)
+  // 5. SATISFACTION
   fill(255);
   text("Satisfaction:", 500, 250);
   fill(255, 220, 0); 
@@ -106,7 +98,7 @@ void draw() {
   text("7/10", 530, 390);
   
   
-  // 6. ACTIVITY (Gun Shape)
+  // 6. ACTIVITY
   fill(255);
   text("Activity: Shooter Game", 500, 450);
   fill(150); 
